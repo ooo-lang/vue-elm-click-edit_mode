@@ -1,17 +1,20 @@
 <template>
-  <div>
-    <div class="contaner">
-      <div @click="editting" v-if="!isEdit">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-content" @click="editting" v-if="!isEdit">
         {{ name }}
       </div>
-      <div v-if="isEdit">
+      <div class="edit-area" v-if="isEdit">
         <input
+          class="edit-input-area"
           v-model="inputValue"
           @keyup.enter="saveContent"
           @keydown.esc="cancelEditing"
         />
-        <Button @click="saveContent">Edit</Button>
-        <Button @click="cancelEditing">Cancel</Button>
+        <div class="btn-area">
+          <Button @click="saveContent">Edit</Button>
+          <Button @click="cancelEditing">Cancel</Button>
+        </div>
       </div>
     </div>
   </div>
@@ -59,8 +62,23 @@ export default {
 };
 </script>
 <style scoped>
-.contaner {
+.card-wrapper {
+  border: 0.5px solid;
+  width: 180px;
+  margin-top: 10px;
+  padding: 5px;
+  padding-bottom: 7px;
+  border-radius: 3px;
+}
+.card {
+}
+.edit-area {
+  margin-top: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.btn-area {
   display: flex;
-  margin: 5px;
+  justify-content: center;
 }
 </style>

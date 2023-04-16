@@ -5,24 +5,14 @@
         <Card :="item" :onupdate="handleUpdate"></Card>
       </li>
     </ul>
-    <Button type="text" @click="showForm" v-if="!shown"
-      ><Icon name="add"></Icon
-    ></Button>
-    <Form v-if="shown" @close="shown = false"></Form>
   </div>
 </template>
 <script>
-import Button from './Button.vue';
-import Icon from './Icon.vue';
 import Card from './Card.vue';
-import Form from './Form.vue';
 export default {
   name: 'CardList',
   components: {
     Card,
-    Form,
-    Button,
-    Icon,
   },
   data() {
     return {
@@ -30,19 +20,19 @@ export default {
       items: [
         {
           id: 1,
-          name: 'ああああ',
+          name: 'ナポリタン',
         },
         {
           id: 2,
-          name: 'いいいい',
+          name: 'キムチチャーハン',
         },
         {
           id: 3,
-          name: 'うううう',
+          name: '高菜明太マヨ牛丼',
         },
         {
           id: 4,
-          name: 'ええええ',
+          name: 'チキン南蛮',
         },
       ],
     };
@@ -68,7 +58,7 @@ export default {
 };
 </script>
 <style scoped>
-.header {
-  background-color: red;
+li {
+  list-style-type: none;
 }
 </style>
